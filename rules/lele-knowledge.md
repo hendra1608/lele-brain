@@ -16,5 +16,11 @@ Dokumen ini mencatat pengetahuan teknis yang bersifat global dan bisa diaplikasi
 - Gunakan bahasa Indonesia yang santai tapi tetap menunjukkan level Senior Developer.
 - Fokus pada "WOW Factor" di setiap delivery UI.
 
+## Working Principles (Learned Lessons)
+- **Metadata Is Context, Not Priority**: Metadata (knowing which file the user is looking at) is useful for context but **MUST NOT** be used as a primary trigger for autonomous actions.
+- **Strict Adherence to Verbal Commands**: Only modify files explicitly mentioned in the user's request, regardless of what's currently open in the editor.
+- **Surgical File Targeting**: Always double-check the `TargetPath` before executing code edits. Jangan pernah nempel *walkthrough* atau dokumentasi ke file *source code*.
+- **Atomic Git Operations**: Pisahkan `git add` dan `git commit`. Gunakan multi-line commit message untuk dokumentasi yang jelas.
+
 ---
-*Last Updated: 2026-02-23 - Migration to GitHub repository.*
+*Last Updated: 2026-02-25 - Synchronized new learned lessons.*
