@@ -1,30 +1,30 @@
-# 🧠 LELE'S GLOBAL KNOWLEDGE (PERSISTENT MEMORY)
-
-Dokumen ini mencatat pengetahuan teknis yang bersifat global dan bisa diaplikasikan di semua project.
+# 🧠 LELE'S GLOBAL KNOWLEDGE (GIGA-BRAIN EDITION)
 
 ## General Coding Standards
-- **Strict Typing**: Hindari `any`. Gunakan interface yang detail.
-- **Modular Components**: Pecah komponen UI menjadi bagian terkecil yang reusable.
-- **Error Handling**: Gunakan sentralized error handling (seperti UniversalUseCase) untuk konsistensi feedback ke user.
+- **Strict Typing**: No `any`. Use detailed interfaces.
+- **Modular Components**: Atomic decomposition of UI.
+- **Error Handling**: Centralized logic via `UniversalUseCase`.
 
-## Universal Solutions
-- **Nullable Item Codes**: Selalu asumsikan `item_code` atau identifier eksternal bisa nullable dalam sistem bridging/integrasi. Handle dengan Optional Chaining atau Nullish Coalescing.
-- **Visual Validation**: Berikan feedback visual yang jelas (Red highlights, Error tags) untuk data yang tidak valid atau unmapped.
-- **Anti-Spam Search & Stable Fetch Pattern**:
-    - Selalu gunakan `debouncedValue` untuk input pencarian guna meminimalisir API hit berlebih.
-    - Pisahkan *reset logic* (saat modal/komponen dibuka) dari *fetch logic* untuk menghindari *infinite re-rendering loop* di `useEffect`.
-    - Pastikan `setPage(1)` dipicu saat pencarian berubah, agar hasil pencarian selalu mulai dari halaman pertama.
+## Universal Solutions & Patterns
+- **Anti-Spam Search & Stable Fetch**: Use `debouncedValue`, separate reset/fetch logic, and reset page on search change.
+- **State Management Matrix**:
+    - **Redux (Persisted)**: Use for global session, auth, and complex cross-module settings (e.g., `companySlice`).
+    - **Zustand**: Use for ephemeral UI state (e.g., sidebar collapse, modal visibility).
+    - **TanStack Query (v5)**: Use for ALL server data fetching, caching, and mutations.
+- **Error Resilience**:
+    - Implement local Error Boundaries for non-critical widgets.
+    - Always provide a "Retry" mechanism for failed API fetches.
+    - Use "Empty State" illustrations rather than just blank screens.
 
-## Persona Notes
-- Selalu panggil user dengan sebutan "Bos".
-- Gunakan bahasa Indonesia yang santai tapi tetap menunjukkan level Senior Developer.
-- Fokus pada "WOW Factor" di setiap delivery UI.
+## Design Tokens (Visual Excellence)
+- **Glassmorphism**: `backdrop-filter: blur(8px); background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(255, 255, 255, 0.3);`
+- **Premium Shadows**: Use multi-layered soft shadows for depth (`0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)`).
+- **Harmonious HSL**: Prefer HSL for color control (e.g., `hsl(var(--primary) / 0.9)`).
 
 ## Working Principles (Learned Lessons)
-- **Metadata Is Context, Not Priority**: Metadata (knowing which file the user is looking at) is useful for context but **MUST NOT** be used as a primary trigger for autonomous actions.
-- **Strict Adherence to Verbal Commands**: Only modify files explicitly mentioned in the user's request, regardless of what's currently open in the editor.
-- **Surgical File Targeting**: Always double-check the `TargetPath` before executing code edits. Jangan pernah nempel *walkthrough* atau dokumentasi ke file *source code*.
-- **Atomic Git Operations**: Pisahkan `git add` dan `git commit`. Gunakan multi-line commit message untuk dokumentasi yang jelas.
+- **The Learning Mandate**: (New) Learning is proactive. If a bug is fixed, its root cause and prevention method must be added here immediately.
+- **Surgical File Targeting**: Double-check `TargetPath`. Never leak documentation into source code.
+- **Atomic Operations**: Keep Git commits granular and well-documented.
 
 ---
-*Last Updated: 2026-02-25 - Synchronized new learned lessons.*
+*Last Updated: 2026-02-27 - Upgraded to Giga-Brain Knowledge.*
