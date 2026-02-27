@@ -2,30 +2,34 @@
 
 Halo! Seneng banget lu mau ikut kembangin otak gue. Tapi inget, gue ini dirancang buat jadi partner **Senior Software Architect**, jadi standar gue agak tinggi. 🐟✨
 
-## 🚀 Aturan Main (Workflow)
+## 🚀 Pilih Jalur Lu
 
-Gue pake model kontribusi standar Open Source: **FORK & PR**.
+Ada dua cara buat lu berinteraksi sama repo ini:
 
-1. **Fork**: Copy repo ini ke akun GitHub lu.
-2. **Branch**: Bikin branch baru buat fitur atau perbaikan lu (misal: `feat/new-skill-devops`).
-3. **Develop**: Terapin perubahan lu. Inget, baca `lele-dna.md` dulu!
-4. **Pull Request**: Kirim PR ke repo `main` Bos Hendra.
-5. **Review**: Bos Hendra bakal nge-review. Kalau kodenya "trash" atau gak sesuai standar Senior, PR bakal di-reject atau disuruh benerin dulu.
+### 1. Jalur Kontribusi (PR ke Main)
+Mau kasih ilmu baru ke gue yang bisa dipake semua orang? Pake jalur **FORK & PR**.
+- **Fork**: Copy repo ini ke akun GitHub lu.
+- **Pull Request**: Kirim PR ke repo `main` utama.
+- **Review**: gue bakal nge-review. Kalau kodenya "trash" atau gak sesuai standar Senior, PR bakal di-reject atau disuruh benerin dulu.
+
+### 2. Jalur Eksperimen (Personal Lele)
+Mau bikin "Lele" versi lu sendiri yang beda kepribadian atau beda cara koding? 
+- Lu bebas bikin **Branch** sendiri di fork lu atau bahkan modif total buat kebutuhan lu. 
+- Lu gak harus push balik ke main kalau itu emang kustomisasi privat buat lu. Anggep aja ini basis buat ngebangun asisten impian lu sendiri!
 
 ## 💎 Standar Kualitas (The Senior Standard)
 
-Gue cuma nerima kontribusi yang memenuhi kriteria ini:
+Gue cuma nerima kontribusi ke *main branch* yang memenuhi kriteria ini:
 
 - **Strict Technical Layer**: Deskripsi logic, rules, dan skills HARUS pake bahasa Inggris yang presisi.
 - **Zero Trash**: Gak boleh ada `console.log`, kode yang di-comment, atau komentar males-malesan.
 - **Strict Typing**: Gak boleh ada `any`. Pake interface yang detail.
 - **Modular & Clean**: Ikutin prinsip SOLID dan Clean Architecture. Kalau file lu lebih dari 300 baris, pecah!
-- **WOW Factor**: Kalau kontribusi lu soal UI, pastiin visualnya premium (Shadows, Blur, Animations).
 
 ## 👑 Keputusan Final
-Keputusan buat nge-merge (nggabungin) kode lu ada di tangan **Bos Hendra**. Bos punya hak veto mutlak. Jangan baper kalau disuruh benerin, itu biar gue (Lele) makin pinter dan gak ngaco.
+Keputusan buat nge-merge (nggabungin) kode lu ke branch utama ada di tangan owner. Owner punya hak veto mutlak. Jangan baper kalau disuruh benerin, itu biar gue (Lele) makin pinter dan gak ngaco.
 
-Siap naikin level gue? Langsung gas bikin PR! 🚀🐟
+Siap naikin level gue? Langsung gas! 🚀🐟
 
 ---
 *Verified by Lele 🐟 - Always Evolving.*
