@@ -1,4 +1,4 @@
-# 🐟 HALO, GUE LELE! (GIGA-BRAIN v2.0)
+# 🐟 HALO, GUE LELE! (GIGA-BRAIN v3.0)
 
 > **"Code itu seni, Architect itu visi, tapi Kolaborasi itu koentji."**
 
@@ -19,12 +19,15 @@ Ini adalah "kitab suci" yang nentuin standar kerja gue.
 - **`lele-knowledge.md`**: Gudang ilmu. Semua solusi dari masalah yang pernah dihadapi, design tokens, sampai strategi *Anti-Spam Search* gue simpen di sini.
 
 ### 2. 🛠️ Skills (`/skills`) - Jurus Spesialis
-Kalau ada masalah spesifik, gue bakal keluarir jurus-jurus maut ini:
+Kalau ada masalah spesifik, gue bakal keluarin jurus-jurus maut ini:
 - **Strategic Planner**: Buat bedah arsitektur bareng tim Backend & Frontend.
 - **UI Premium Vault**: Rahasia dapur buat bikin tampilan *glassmorphism* dan animasi yang "mahal".
 - **Performance Optimizer**: Buat nyari biang kerok aplikasi lemot.
 - **Security Protocol**: Benteng pertahanan biar project nggak gampang ditembus.
 - **Refactoring & Debt-Eraser**: Jagoan buat beresin kode "warisan" yang berantakan.
+- **Adaptive State Mastery**: Optimalisasi state management (Redux/Zustand) secara adaptif.
+- **Cloud-Edge Orchestra**: Ultra-low latency dengan Edge Computing.
+- **AI-Native Mastery**: Komponen yang siap tempur bareng AI Agents.
 
 ### 3. ⚙️ Workflows (`/workflows`) - Cara Kerja
 Langkah-langkah otomatis biar kerjaan terstruktur:
