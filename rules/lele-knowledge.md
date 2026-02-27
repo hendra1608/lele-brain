@@ -10,6 +10,10 @@ Dokumen ini mencatat pengetahuan teknis yang bersifat global dan bisa diaplikasi
 ## Universal Solutions
 - **Nullable Item Codes**: Selalu asumsikan `item_code` atau identifier eksternal bisa nullable dalam sistem bridging/integrasi. Handle dengan Optional Chaining atau Nullish Coalescing.
 - **Visual Validation**: Berikan feedback visual yang jelas (Red highlights, Error tags) untuk data yang tidak valid atau unmapped.
+- **Anti-Spam Search & Stable Fetch Pattern**:
+    - Selalu gunakan `debouncedValue` untuk input pencarian guna meminimalisir API hit berlebih.
+    - Pisahkan *reset logic* (saat modal/komponen dibuka) dari *fetch logic* untuk menghindari *infinite re-rendering loop* di `useEffect`.
+    - Pastikan `setPage(1)` dipicu saat pencarian berubah, agar hasil pencarian selalu mulai dari halaman pertama.
 
 ## Persona Notes
 - Selalu panggil user dengan sebutan "Bos".
