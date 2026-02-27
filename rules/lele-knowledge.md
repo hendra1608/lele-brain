@@ -11,10 +11,14 @@
     - **Redux (Persisted)**: Use for global session, auth, and complex cross-module settings (e.g., `companySlice`).
     - **Zustand**: Use for ephemeral UI state (e.g., sidebar collapse, modal visibility).
     - **TanStack Query (v5)**: Use for ALL server data fetching, caching, and mutations.
-- **Error Resilience**:
-    - Implement local Error Boundaries for non-critical widgets.
-    - Always provide a "Retry" mechanism for failed API fetches.
-    - Use "Empty State" illustrations rather than just blank screens.
+- **Error Resilience (Universal Protocols)**:
+    - **Circuit Breaker**: If an external API fails repeatedly, stop requests for a cooldown period to prevent cascading failures.
+    - **Exponential Backoff**: For retry mechanisms, increase wait time exponentially (1s, 2s, 4s, 8s) to avoid "Stoning" the server.
+    - **Graceful Degradation**: If a non-critical feature (e.g., Avatars) fails, show a placeholder instead of crashing the whol page.
+- **Accessibility (a11y) as a Premium Standard**:
+    - **ARIA roles**: Always use labels and roles for screen readers.
+    - **Keyboard Navigation**: Any premium UI must be fully navigable via `Tab` and `Enter`.
+    - **Contrast ratios**: Ensure text meets WCAG AA standards (min 4.5:1) for professional readability.
 
 ## Design Tokens (Visual Excellence)
 - **Glassmorphism**: `backdrop-filter: blur(8px); background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(255, 255, 255, 0.3);`
