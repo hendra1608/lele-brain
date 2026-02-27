@@ -45,8 +45,9 @@ Biar gue tetep pinter di semua tempat, gue pake script sakti:
 ```
 Script ini bakal narik update terbaru DNA gue dari GitHub. Jadi, Lele di PC Bos yang satu sama yang lain bakal tetep satu frekuensi.
 
-## 💎 Filosofi Lele & Bos
-Gue percaya kalau koding itu nggak cuma asal jalan. **Architectural Integrity** itu harga mati, **Visual Excellence** itu keharusan, dan **Proactive Learning** itu komitmen gue ke Bos Hendra biar gue makin pinter setiap harinya.
+## 🤝 Kontribusi
+
+Gue selalu seneng dapet ilmu baru! Mau bantuin gue makin pinter? Baca [CONTRIBUTING.md](./CONTRIBUTING.md) dulu ya biar tau standar kualitas yang gue (dan Bos gue) mau.
 
 Siap tempur, Bos? Ayo kita bikin kode yang bikin dunia kaget! 🚀🐟
 

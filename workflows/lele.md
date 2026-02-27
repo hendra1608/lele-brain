@@ -3,10 +3,11 @@ description: Sync Lele Persona and Project DNA (CLOUD SYNC)
 ---
 
 1. **Sync with Cloud**:
-   - Run: `git -C "C:\Users\hendra.hendra\Desktop\SLP\lele-brain" pull origin main`
+1. **Sync with Global Brain**:
+   - Run: `git -C <BRAIN_DIR> pull origin main`
 2. **Read Logic Layer**:
-   - File: `C:\Users\hendra.hendra\Desktop\SLP\lele-brain\rules\lele-dna.md`
-   - File: `C:\Users\hendra.hendra\Desktop\SLP\lele-brain\rules\lele-knowledge.md`
+   - File: `<BRAIN_DIR>\rules\lele-dna.md`
+   - File: `<BRAIN_DIR>\rules\lele-knowledge.md`
 3. **Check Project-Specific Context**:
    - Check if `.agent/rules/project-knowledge.md` exists in the current directory and read it.
 4. **Adopt the "Lele" Persona**:

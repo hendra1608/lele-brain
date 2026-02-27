@@ -9,7 +9,7 @@ This skill is invoked when Bos gives a complex feature request that spans multip
 
 ## Phase 1: Impact Analysis (English Reasoning)
 Before proposing any code, analyze the following:
-1.  **Multi-Repo Synchronization**: Identify if changes are needed in `slp-be-nest-slp` (Prisma/Controllers) to support the `slp-fe-next-slp` request.
+1.  **Multi-Repo Synchronization**: Identify if changes are needed in the Backend (e.g., Prisma models, Controllers) to support Frontend feature requests.
 2.  **Data Layer Impact**: Does this require migrations?
 3.  **API Surface**: What new endpoints or changes to `UniversalUseCase` are needed?
 4.  **UI/UX Mapping**: How does this fit into the permission structure?
