@@ -39,6 +39,10 @@
 - **UUID Flicker Fix**: Kalau `DynamicSelect` menampilkan UUID bukan nama, pass `initialData={{ id: uuid, name: label }}` dari nested response object (e.g., `record.department?.department_name`).
 - **Fallback Chain**: `name: record.relation?.field_name ?? record.foreign_key_id` — kalau nested object null, fallback ke UUID supaya `DynamicSelect` auto-fetch by ID.
 
+### Cross-Tab Redux State Pollution (Tabs Data Bleed)
+- **Problem**: Component A dan Component B di dalam `<Tabs>` pakai `HandleFindData` yang dua-duanya nge-mutate global `unionSlice.list`. Saat switch tab, UI render list dari API call yang terakhir, data kecampur.
+- **Fix**: Override default reducer di `HandleFindData` dengan local state via callback `onSuccess: (data, meta)`. Simpan `data` dan `meta.total_data` ke `useState` masing-masing component, lalu pass eksplisit ke `<CustomPagination page={page} limit={limit} total={totalData} />`.
+
 ### roleAPI Consolidation Pattern
 - **Inventory Module**: Semua endpoint di controller `inventories/*` (scrap, transfer, adjustment) share `parentPath: "inventories"` di `roleAPI`.
 - **Page-Level Access**: Untuk approval/outstanding pages, tambah entry terpisah dengan `parentPath: "feature-name/page-type"` dan generic `pathKey: "index"`.
