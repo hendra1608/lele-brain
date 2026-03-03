@@ -43,9 +43,10 @@
 - **Problem**: Component A dan Component B di dalam `<Tabs>` pakai `HandleFindData` yang dua-duanya nge-mutate global `unionSlice.list`. Saat switch tab, UI render list dari API call yang terakhir, data kecampur.
 - **Fix**: Override default reducer di `HandleFindData` dengan local state via callback `onSuccess: (data, meta)`. Simpan `data` dan `meta.total_data` ke `useState` masing-masing component, lalu pass eksplisit ke `<CustomPagination page={page} limit={limit} total={totalData} />`.
 
-### roleAPI Consolidation Pattern
-- **Inventory Module**: Semua endpoint di controller `inventories/*` (scrap, transfer, adjustment) share `parentPath: "inventories"` di `roleAPI`.
-- **Page-Level Access**: Untuk approval/outstanding pages, tambah entry terpisah dengan `parentPath: "feature-name/page-type"` dan generic `pathKey: "index"`.
+### Self-Sufficient Approval Actions
+- **Session-Driven Permission**: `ApprovalActions` jangan dipasangi manual `branchId` atau `currentUserData`. Komponen harus bisa narik sendiri dari `authSlice` (via `job_position_id`) dan `companySlice` (via `defaultBranch`).
+- **Logic Fallback**: `const activeBranchId = branchId || defaultBranch?.id;`. Ini bikin komponen reusable di page mana aja tanpa harus oper-oper data session yang sebenernya udah ada di Redux.
+- **AuthState Enhancement**: Simpan `job_position_id` di `authSlice` pas login/get-profile. Ini kunci buat `ApprovalWorkflowHelper.checkUserApprovalPermission` bisa jalan otomatis di mana-mana.
 - **ModuleEnum Naming**: Harus match **exact** dengan `Prisma.ModelName.X` di BE (plural form, e.g., `Adjustments`, `Scraps`, `StockTransfers`).
 
 ## Working Principles (Learned Lessons)
