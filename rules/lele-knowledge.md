@@ -43,10 +43,14 @@
 - **Problem**: Component A dan Component B di dalam `<Tabs>` pakai `HandleFindData` yang dua-duanya nge-mutate global `unionSlice.list`. Saat switch tab, UI render list dari API call yang terakhir, data kecampur.
 - **Fix**: Override default reducer di `HandleFindData` dengan local state via callback `onSuccess: (data, meta)`. Simpan `data` dan `meta.total_data` ke `useState` masing-masing component, lalu pass eksplisit ke `<CustomPagination page={page} limit={limit} total={totalData} />`.
 
+### Multi-Level Approval Status Transition
+- **Problem**: Transaksi langsung berubah jadi "Approved" (2) padahal baru disetujui satu orang (paralel) atau baru level pertama (sequential).
+- **Fix**: Jangan cuma nge-check `level`. Itung jumlah detail yang masih `waiting` (`status_approve === null`).
+- **Condition**: `const isFinalLevel = waitingDetails.length === 1;`. Hanya kirim status `2` jika yang sedang di-approve adalah antrian TERAKHIR dalam seluruh workflow.
+
 ### Self-Sufficient Approval Actions
-- **Session-Driven Permission**: `ApprovalActions` jangan dipasangi manual `branchId` atau `currentUserData`. Komponen harus bisa narik sendiri dari `authSlice` (via `job_position_id`) dan `companySlice` (via `defaultBranch`).
-- **Logic Fallback**: `const activeBranchId = branchId || defaultBranch?.id;`. Ini bikin komponen reusable di page mana aja tanpa harus oper-oper data session yang sebenernya udah ada di Redux.
-- **AuthState Enhancement**: Simpan `job_position_id` di `authSlice` pas login/get-profile. Ini kunci buat `ApprovalWorkflowHelper.checkUserApprovalPermission` bisa jalan otomatis di mana-mana.
+- **Session-Driven Permission**: `ApprovalActions` jangan dipasangi manual `branchId` atau `currentUserData`. Komponen harus bisa narik sendiri dari `authSlice` (via `job_position_id` & `branch_id`) dan `companySlice` (via `defaultBranch`).
+- **Logic Fallback**: `const activeBranchId = branchId || approvalDetail?.branch_id || defaultBranch?.id || authState.branch_id;`. Ini bikin komponen robust dan reusable tanpa oper-oper data session manual.
 - **ModuleEnum Naming**: Harus match **exact** dengan `Prisma.ModelName.X` di BE (plural form, e.g., `Adjustments`, `Scraps`, `StockTransfers`).
 
 ## Working Principles (Learned Lessons)
