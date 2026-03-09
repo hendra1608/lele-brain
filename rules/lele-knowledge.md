@@ -49,9 +49,9 @@
 - **Condition**: `const isFinalLevel = waitingDetails.length === 1;`. Hanya kirim status `2` jika yang sedang di-approve adalah antrian TERAKHIR dalam seluruh workflow.
 
 ### Self-Sufficient Approval Actions
-- **Session-Driven Permission**: `ApprovalActions` jangan dipasangi manual `branchId` atau `currentUserData`. Komponen harus bisa narik sendiri dari `authSlice` (via `job_position_id` & `branch_id`) dan `companySlice` (via `defaultBranch`).
-- **Logic Fallback**: `const activeBranchId = branchId || approvalDetail?.branch_id || defaultBranch?.id || authState.branch_id;`. Ini bikin komponen robust dan reusable tanpa oper-oper data session manual.
 - **ModuleEnum Naming**: Harus match **exact** dengan `Prisma.ModelName.X` di BE (plural form, e.g., `Adjustments`, `Scraps`, `StockTransfers`).
+- **Sequential Approval vs. same-user access**: Hindari pengecekan `alreadyApproved` yang terlalu kaku. Jika user punya role di Level 1 dan Level 2, biarkan dia approve keduanya secara berurutan. Prioritaskan pengecekan terhadap `minWaitingLevel` yang aktif.
+- **Relation-based DynamicSelect**: Selalu pass `initialData={ { id: data.id, name: data.label } }` dari response object relasi (e.g., `data.Branches.branch_name`) di halaman Detail/Edit untuk mencegah "UUID flicker" di UI.
 
 ## Working Principles (Learned Lessons)
 - **The Learning Mandate**: (New) Learning is proactive. If a bug is fixed, its root cause and prevention method must be added here immediately.
@@ -62,4 +62,4 @@
 - **⚠️ JANGAN SAMPAI DIINGETIN BUAT BELAJAR**: Setiap habis `git commit`, LANGSUNG update `lele-knowledge.md`. Kalau sampe Bos yang ingetin duluan = **GAGAL**. Ini bukan optional, ini mandatory.
 
 ---
-*Last Updated: 2026-03-02 - Added SLP Role Architecture, DynamicSelect Pattern, roleAPI Consolidation.*
+*Last Updated: 2026-03-09 - Added Sequential Approval logic, Relation-based DynamicSelect.*
