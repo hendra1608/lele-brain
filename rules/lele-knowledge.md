@@ -53,6 +53,11 @@
 - **ModuleEnum Naming**: Must match the **Exact Case** and **Plurality** of the Prisma model name on the backend (e.g., `Adjustments`, `Scraps`).
 - **Sequential Priority**: Prioritize `minWaitingLevel`. If a user occupies multiple levels, allow them to approve sequentially without rigid `alreadyApproved` blocks if those blocks prevent logical flow.
 
+### Requisition Optional Source Pattern
+- **Logic**: When a transaction can be standalone or linked (e.g., Requisition without WO), use a `sourceType` of `"none"` or `"Request"`.
+- **Payload Discipline**: Bos's rule: do not send `source_trn` at all in the payload if no source is selected. Omit the key rather than sending `null` to avoid backend validation friction.
+- **Manual Dependency**: If source selection usually provides a `city_id`, ensure a manual `DynamicSelect` for City is presented in `"none"` mode to maintain the cascading Site filtering.
+
 ## Antigravity System Evolution (v2026.03.10+)
 - **AGENTS.md Implementation**: Use `AGENTS.md` at the workspace root for global project rule enforcement. This avoids committing rules to project-specific repositories while maintaining strict standards.
 - **Auto-continue Protocol**: Long-running tasks now utilize default auto-continue for smoother execution cycles.
