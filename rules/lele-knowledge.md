@@ -58,6 +58,9 @@
 - **Payload Discipline**: Bos's rule: do not send `source_trn` at all in the payload if no source is selected. Omit the key rather than sending `null` to avoid backend validation friction.
 - **Manual Dependency**: If source selection usually provides a `city_id`, ensure a manual `DynamicSelect` for City is presented in `"none"` mode to maintain the cascading Site filtering.
 
+### Enum Validation (BE vs FE)
+- **Lesson**: Kalo mau nge-update status di frontend, jangan cuma main tebak string (contoh: "close"). Harus selalu ngecek exact Enum di Backend (kayak `jo_closed` di DTO Prisma) biar nggak kena 400 Validation Error.
+
 ## Antigravity System Evolution (v2026.03.10+)
 - **AGENTS.md Implementation**: Use `AGENTS.md` at the workspace root for global project rule enforcement. This avoids committing rules to project-specific repositories while maintaining strict standards.
 - **Auto-continue Protocol**: Long-running tasks now utilize default auto-continue for smoother execution cycles.
