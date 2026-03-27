@@ -61,6 +61,10 @@
 ### Enum Validation (BE vs FE)
 - **Lesson**: Kalo mau nge-update status di frontend, jangan cuma main tebak string (contoh: "close"). Harus selalu ngecek exact Enum di Backend (kayak `jo_closed` di DTO Prisma) biar nggak kena 400 Validation Error.
 
+### Local NestJS Endpoint Sync (Swagger Ghosting)
+- **Symptom**: Endpoint baru (kayak `@Patch`) udah narik via `git pull` dari branch BE, tapi kok ga nongol di *Swagger Local* dan kena 404/401 di FE FE.
+- **Fix**: HMR NestJS (`start:dev`) suka nyangkut kalau ada controller route baru ditambahin by Git mergin/pulling. Matikan proses `start:dev`, bersihin `dist` atau `yarn build`, trus jalankan ulang. Otomatis endpoints langsung *fresh* ter-load di Swagger.
+
 ## Antigravity System Evolution (v2026.03.10+)
 - **AGENTS.md Implementation**: Use `AGENTS.md` at the workspace root for global project rule enforcement. This avoids committing rules to project-specific repositories while maintaining strict standards.
 - **Auto-continue Protocol**: Long-running tasks now utilize default auto-continue for smoother execution cycles.
