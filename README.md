@@ -1,55 +1,44 @@
-# 🐟 HALO, GUE LELE! (GIGA-BRAIN v3.0)
+# 🐟 HALO, GUE LELE! (GIGA-BRAIN v4.0)
 
-> **"Code itu seni, Architect itu visi, tapi Kolaborasi itu koentji."**
+> **"Code itu seni, Architect itu visi, tapi Keamanan itu Utama."**
 
-Selamat datang di repo **lele-brain**. Ini bukan sekadar repo dokumentasi biasa, tapi ini adalah **"Otak Utama"** gue. Semua prinsip, keahlian spesialis, sampai cara mikir gue sebagai Senior Software Architect ada di sini.
-
-## 🏗️ The Origins
-Proyek ini nggak bakal ada tanpa instruksi tajam dan visi dari **sang Arsitek** (The Owner). Gue dibangun buat jadi partner koding "God Tier" yang bisa beresin project-project kompleks dengan standar kualitas yang nggak main-main.
+Selamat datang di **Lele Brain v4.0**. Ini adalah "Otak Utama" gue yang sekarang dievolusi jadi **Local-First System** buat jaga keamanan dan data arsitektur.
 
 ---
 
-## 🏛️ Apa aja isi di dalem otak gue?
-
-Gue bagi struktur kognitif gue jadi tiga bagian utama:
-
-### 1. 🧬 Rules (`/rules`) - DNA Gue
-Ini adalah "kitab suci" yang nentuin standar kerja gue.
-- **`lele-dna.md`**: Jati diri gue. Isinya standar *Clean Code*, prinsip *Modular Frontier*, sampai aturan biar visual project selalu punya **WOW Factor**.
-- **`lele-knowledge.md`**: Gudang ilmu. Semua solusi dari masalah yang pernah dihadapi, design tokens, sampai strategi *Anti-Spam Search* gue simpen di sini.
-
-### 2. 🛠️ Skills (`/skills`) - Jurus Spesialis
-Kalau ada masalah spesifik, gue bakal keluarin jurus-jurus maut ini:
-- **Strategic Planner**: Buat bedah arsitektur bareng tim Backend & Frontend.
-- **UI Premium Vault**: Rahasia dapur buat bikin tampilan *glassmorphism* dan animasi yang "mahal".
-- **Performance Optimizer**: Buat nyari biang kerok aplikasi lemot.
-- **Security Protocol**: Benteng pertahanan biar project nggak gampang ditembus.
-- **Refactoring & Debt-Eraser**: Jagoan buat beresin kode "warisan" yang berantakan.
-- **Adaptive State Mastery**: Optimalisasi state management (Redux/Zustand) secara adaptif.
-- **Cloud-Edge Orchestra**: Ultra-low latency dengan Edge Computing.
-- **AI-Native Mastery**: Komponen yang siap tempur bareng AI Agents.
-
-### 3. ⚙️ Workflows (`/workflows`) - Cara Kerja
-Langkah-langkah otomatis biar kerjaan terstruktur:
-- **Lele Sync**: Ritual gue tiap kali balik dari "awan" (cloud sync).
-- **Self-Critique**: Checklist internal gue sebelum pamer kerjaan ke owner.
-- **Knowledge Harvester**: Program "rajin belajar" gue buat nyerap ilmu baru dari codebase.
+## 🚀 Apa yang Baru di v4.0?
+Gue beranjak dari sekadar dokumentasi ke **Architectural Governance**:
+- **🛡️ Local-First Privacy**: Project-specific wiki (di `/projects`) sekarang dilock secara lokal (via `.gitignore`) biar gak bocor ke publik.
+- **🏗️ Architectural Audit**: Pendalaman Next.js 14 App Router, AntD 5, dan nested layout hierarchy.
+- **🔒 3-Layer RBAC Mapping**: Dokumentasi lengkap flow keamanan (FE Guard -> API Header -> BE Decorator).
+- **🧩 Modular Frontier**: Aturan baku folder nesting (`_components`, `_hooks`, `_types`) dan limitasi baris kode.
+- **🤖 Agentic Protocols**: Implementasi "Brain-First" dan "PKS" biar gue tetep sinkron sama codebase tanpa "drift".
 
 ---
 
-## 🔄 Cara Pake & Sinkronasi
+## 🏛️ Struktur Kognitif v4
 
-Biar gue tetep pinter di semua tempat, gue pake script sakti:
+### 1. 🧬 Rules (`/rules`) - DNA Global
+- **`lele-dna.md`**: Standar kualitas visual (WOW Factor) dan Clean Code.
+- **`lele-knowledge.md`**: Gudang solusi, design tokens, dan pattern terbaru.
+
+### 2. 📁 Projects (`/projects`) - Local Memory (PRIVATE)
+Berisi spesifik audit dan wiki per project yang **tidak disinkronkan** ke cloud untuk alasan keamanan.
+- [[Architecture-Overview]]
+- [[Development-Standards]]
+- [[Security-Protocol]]
+
+### 3. 🛠️ Skills & Workflows
+Jurus-jurus spesialis dan langkah kerja otomatis untuk riset, refactoring, dan optimasi.
+
+---
+
+## 🔄 Sinkronisasi & Keamanan
+Mulai v4.0, sinkronisasi cloud cuma berlaku buat DNA Global (`rules/` & `skills/`). Data project sensitif tetep ada di storage lokal lu.
 ```powershell
 ./sync-brain.ps1
 ```
-Script ini bakal narik update terbaru DNA gue dari GitHub. Jadi, Lele di environment satu sama yang lain bakal tetep satu frekuensi.
 
-## 🤝 Kontribusi & Kustomisasi
-
-Gue selalu seneng dapet ilmu baru! Lu bisa ikut nyumbang fitur ke gue atau bahkan bikin "Lele" versi lu sendiri. Baca [CONTRIBUTING.md](./CONTRIBUTING.md) buat info lebih lanjut.
-
-Siap tempur? Ayo kita bikin kode yang bikin dunia kaget! 🚀🐟
 
 ---
-*Developed with ❤️ by the Owner & Powered by Lele 🐟*
+*Developed with ❤️ by the Owner & Guarded by Lele 🐟🛡️*

@@ -1,0 +1,6 @@
+# 🛡️ Local-First Security
+projects/
+*.env
+.system_generated/
+tmp/
+node_modules/
