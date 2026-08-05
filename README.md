@@ -1,44 +1,13 @@
-# 🐟 HALO, GUE LELE! (GIGA-BRAIN v4.0)
-
-> **"Code itu seni, Architect itu visi, tapi Keamanan itu Utama."**
-
-Selamat datang di **Lele Brain v4.0**. Ini adalah "Otak Utama" gue yang sekarang dievolusi jadi **Local-First System** buat jaga keamanan dan data arsitektur.
-
----
-
-## 🚀 Apa yang Baru di v4.0?
-Gue beranjak dari sekadar dokumentasi ke **Architectural Governance**:
-- **🛡️ Local-First Privacy**: Project-specific wiki (di `/projects`) sekarang dilock secara lokal (via `.gitignore`) biar gak bocor ke publik.
-- **🏗️ Architectural Audit**: Pendalaman Next.js 14 App Router, AntD 5, dan nested layout hierarchy.
-- **🔒 3-Layer RBAC Mapping**: Dokumentasi lengkap flow keamanan (FE Guard -> API Header -> BE Decorator).
-- **🧩 Modular Frontier**: Aturan baku folder nesting (`_components`, `_hooks`, `_types`) dan limitasi baris kode.
-- **🤖 Agentic Protocols**: Implementasi "Brain-First" dan "PKS" biar gue tetep sinkron sama codebase tanpa "drift".
-
----
-
-## 🏛️ Struktur Kognitif v4
-
-### 1. 🧬 Rules (`/rules`) - DNA Global
-- **`lele-dna.md`**: Standar kualitas visual (WOW Factor) dan Clean Code.
-- **`lele-knowledge.md`**: Gudang solusi, design tokens, dan pattern terbaru.
-
-### 2. 📁 Projects (`/projects`) - Local Memory (PRIVATE)
-Berisi spesifik audit dan wiki per project yang **tidak disinkronkan** ke cloud untuk alasan keamanan.
-- [[Architecture-Overview]]
-- [[Development-Standards]]
-- [[Security-Protocol]]
-
-### 3. 🛠️ Skills & Workflows
-Jurus-jurus spesialis dan langkah kerja otomatis untuk riset, refactoring, dan optimasi.
-
----
-
-## 🔄 Sinkronisasi & Keamanan
-Mulai v4.0, sinkronisasi cloud cuma berlaku buat DNA Global (`rules/` & `skills/`). Data project sensitif tetep ada di storage lokal lu.
-```powershell
-./sync-brain.ps1
-```
-
-
----
-*Developed with ❤️ by the Owner & Guarded by Lele 🐟🛡️*
+# Lele Brain
+Lele Brain is a local-first, versioned source of reusable engineering rules, skills, and safe workflows.
+## Structure
+- `rules/`: global policy and reusable knowledge.
+- `skills/`: focused, callable workflows plus `skill-registry.md`.
+- `workflows/`: safe supporting processes.
+- `projects/`: project-scoped local memory; do not treat it as global policy.
+## Activation
+The canonical `lele-orchestrator` skill dispatches by dominant risk. Individual skills are exposed to Codex through source-of-truth directory links that point back to this repository, so no `SKILL.md` is duplicated.
+## Local-first safety
+`sync-brain.ps1` is read-only by default. It never pulls or pushes. Explicit staging requires file paths, secret scanning, staged-diff checks, and review; committing additionally requires `-ConfirmCommit`.
+## Quality gate
+Run `powershell -ExecutionPolicy Bypass -File scripts\validate-brain.ps1` and `powershell -ExecutionPolicy Bypass -File scripts\validate-codex-links.ps1`. For security-sensitive or requested scored work, require independent review and resolve every P0/P1 finding before completion.

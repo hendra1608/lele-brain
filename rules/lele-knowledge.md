@@ -19,3 +19,6 @@ Every entry in this file is `scope: global`, `status: active`, and `last-verifie
 ## Knowledge Lifecycle
 - **Source:** governance policy. **Rule:** Mark obsolete guidance as `deprecated`, preserve a scoped migration note, and remove it from global defaults. Do not append duplicate blocks.
 - **Legacy SLP note:** SLP's historical role-header/localStorage implementation is project-scoped legacy material, not a global recommendation. See `projects/slp-fe/wiki/Role-Access-Control.md` when that project is explicitly active.
+
+## Brain Governance Lesson
+- **Source:** Lele Brain vNext review, 2026-08-05. **Rule:** A reusable skill is only reliable when its trigger metadata, source location, activation cases, validation, and installed identity agree. Keep one source of truth, reject duplicate callable identities, and require independent review for high-risk governance changes.

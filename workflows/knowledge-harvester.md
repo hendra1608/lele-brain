@@ -1,26 +1,9 @@
 ---
-description: Lele's Proactive Wisdom Gathering (Knowledge Harvester)
+description: Distill verified reusable lessons without duplicating or leaking project-specific knowledge.
 ---
-
-# Knowledge Harvester Workflow
-
-This workflow is triggered periodically or after major feature implementations to ensure the brain keeps evolving.
-
-## 1. Proactive Scanning
-- Scan recently touched files or related modules.
-- Identify "High-Quality Patterns": Look for elegant solutions to complex UI or logic problems developed in the codebase.
-- Identify "Dangerous Pitfalls": Look for recurring bugs or anti-patterns that caused friction.
-
-## 2. Wisdom Extraction (AI Reasoning)
-- Analyze *why* a certain pattern is effective.
-- Distill the pattern into a generalized rule or "Lesson Learned".
-
-## 3. Database Injection
-- Append the distilled wisdom to `lele-brain/rules/lele-knowledge.md` under the appropriate section.
-- Use the format: `- **[Topic Name]**: [Distilled Wisdom and Context].`
-
-## 4. Continuity Check
-- Ensure the new knowledge is reflected in Lele's future plans and implementations.
-
----
-*Learning is the fuel of seniority.*
+# Knowledge Harvester
+1. Start from verified source, tests, incident evidence, or an accepted decision.
+2. Classify the lesson as `global` or `project`. Put project facts in the repository wiki or project-scoped memory; do not add them to global knowledge.
+3. Before writing, search for an existing equivalent entry and update it rather than appending a duplicate.
+4. Record scope, status, source, and last-verified date.
+5. Mark replaced guidance deprecated and link its replacement. Never record secrets, tokens, private URLs, credentials, or production-only data.

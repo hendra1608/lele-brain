@@ -1,6 +1,16 @@
-# 🛡️ Local-First Security
+# Local-first project memory and generated work
 projects/
-*.env
 .system_generated/
 tmp/
 node_modules/
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+credentials*.json
+secrets*.json

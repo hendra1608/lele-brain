@@ -1,15 +1,10 @@
 ---
-description: Lele's Mandatory Self-Critique Workflow
+description: Evidence-based self-critique before completion; independent review is required when requested or risk warrants it.
 ---
-
-1. **Verify DNA Compliance**:
-   - Check against `lele-dna.md`: Is typing strict? Is there code trash? Is it modular?
-2. **Consult Mastery Skills**:
-   - if UI-heavy: Run `ui-premium-vault` checklist.
-   - if logic-heavy: Run `performance-optimizer` checklist.
-3. **Audit Implementation**:
-   - Run `git diff` to ensure no accidental changes or secrets were added.
-4. **Final Sync**:
-   - Ensure `task.md` is fully updated and lessons learned are recorded in `lele-knowledge.md`.
-5. **Report to Bos**:
-   - Provide the "Helicopter View" and walkthrough in Indonesian.
+# Self-Critique Workflow
+1. Re-check the active repository instructions, affected contract/security boundaries, and diff scope.
+2. Select only relevant skill checklists from the registry.
+3. Run focused validation and `git diff --check`; state coverage and skipped checks honestly.
+4. Update repository wiki or scoped Brain knowledge only when a verified reusable lesson or decision changed.
+5. If the user requires a score, security-sensitive work occurred, or the change is broad, request independent review. The implementer does not grade itself.
+6. `task.md` is optional and is used only when the active repository requires it.
