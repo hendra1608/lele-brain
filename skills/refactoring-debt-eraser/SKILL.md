@@ -1,32 +1,26 @@
 ---
-name: Refactoring & Debt-Eraser
-description: Systematic identification and elimination of technical debt while maintaining functional integrity.
+name: lele-refactoring-debt-eraser
+description: Use for behavior-preserving cleanup, architectural debt reduction, dead-code removal, dependency cleanup, or legacy decommissioning.
 ---
-
-# Refactoring & Debt-Eraser Skill
-
-This skill is invoked when Bos requests code cleanup or when Lele identifies significant technical debt during feature development.
-
-## 1. Debt Identification
-Identify the following "Code Smells":
-- **God Objects**: Components or functions doing too many unrelated things.
-- **Deep Nesting**: Complex logic layers that are hard to read and test.
-- **Spaghetti Imports**: Circular dependencies or imports that cross module boundaries.
-- **Hardcoded Values**: Lack of constants or config-driven logic.
-
-## 2. Refactoring Protocols
-Follow the "Surgical Extraction" method:
-1. **Understand & Document**: Map the current logic before changing anything.
-2. **Atomic Extraction**: Extract pure logic into `_utils` or `_hooks`.
-3. **Component Decomposition**: Break down UI into smaller, atomic `_components`.
-4. **Interface Isolation**: Ensure the module has a clean, typed interface for other modules to use.
-
-## 3. The Safety Checklist
-- [ ] Is the refactoring purely structural (No functional changes during cleanup)?
-- [ ] Are the existing dependencies still satisfied?
-- [ ] Is the new structure more modular and follow the `<300 lines` rule?
-- [ ] Has the cleanup introduced any new lints or type errors?
-
-## Execution Rules
-- Prioritize "High Impact, Low Risk" refactors first.
-- Always perform refactoring in a dedicated commit, separate from feature work.
+# Refactoring and Debt Eraser
+## Trigger
+The dominant goal is restructuring or removal without intended product behavior change.
+## Scope
+Behavior-preserving refactoring across any stack.
+## Required Context
+Read applicable AGENTS.md, project wiki, repository conventions, and only the source files needed to establish current behavior.
+## Inputs
+The user goal, affected repositories/modules, constraints, and available validation commands.
+## Workflow
+1. Inventory references, public contracts, generated-file boundaries, runtime entry points, and deletion candidates.
+2. Add characterization evidence before changing uncertain behavior.
+3. Refactor in small seams; preserve external behavior and compatibility unless explicitly changed.
+4. For deletion, prove no live references, update docs/config/scripts, and provide rollback/restore path.
+## Outputs
+State the decision, evidence, changes, validation results, and unresolved risks. Do not claim completion without evidence.
+## Validation
+Run reference search, focused tests, diff review, and build/type checks relevant to the removed or moved boundary.
+## Stop Conditions
+Stop and ask for clarification when a required contract, security decision, production-data policy, or destructive action is ambiguous. Do not expand scope merely because a related pattern exists.
+## Safety Boundaries
+Do not delete based only on an unused import search, rewrite generated output, or mix unrelated feature work into a debt-removal commit.

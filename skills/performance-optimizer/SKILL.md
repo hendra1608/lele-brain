@@ -1,32 +1,25 @@
 ---
-name: Performance Optimizer
-description: Detecting and resolving performance bottlenecks in React/Next.js applications.
+name: lele-performance-optimizer
+description: Use for measured frontend/backend performance regressions, slow interactions, excessive requests, or resource bottlenecks.
 ---
-
-# Performance Optimizer Skill
-
-This skill is invoked during the verification phase or when a feature feels laggy or slow.
-
-## 1. Diagnostic Protocol
-- **React Profiler**: Use to identify "Why did this render?" and detect re-render waterfalls.
-- **Network Audit**: Check for over-fetching, large payloads, and missing compression.
-- **Bundle Analysis**: Use `@next/bundle-analyzer` to identify heavy dependencies that should be code-split.
-
-## 2. Optimization Strategies
-- **Memoization Mastery**: 
-    - Use `React.memo` for components with heavy render logic but stable props.
-    - Use `useCallback` for functions passed as props to children to prevent unnecessary re-renders.
-    - Use `useMemo` for derived data filters or complex object construction.
-- **Stable Fetching**: Always separate reset logic from fetch logic to avoid state-trigger-fetch loops.
-- **Debouncing/Throttling**: Apply to all search inputs and resize listeners.
-
-## 3. The Performance Checklist
-- [ ] Are all expensive calculations memoized?
-- [ ] Is the network payload minimized (JSON sizing)?
-- [ ] Are we using Skeleton screens for perceived performance?
-- [ ] Is the "Anti-Spam Search & Stable Fetch" pattern applied?
-- [ ] Does the lighthouse score for Performance exceed 90?
-
-## Execution Rules
-- Prioritize "Good Enough" performance over premature optimization.
-- Focus on user-perceivable lag (TTI - Time to Interactive).
+# Performance Optimizer
+## Trigger
+There is user-reported or measured latency, rendering, query, or resource evidence.
+## Scope
+Measure before optimizing; frontend and backend performance are both in scope.
+## Required Context
+Read applicable AGENTS.md, project wiki, repository conventions, and only the source files needed to establish current behavior.
+## Inputs
+The user goal, affected repositories/modules, constraints, and available validation commands.
+## Workflow
+1. Establish a baseline and identify the slow path.
+2. Trace render, network, cache, server, and database contributors.
+3. Apply the smallest evidence-backed remediation and compare before/after.
+## Outputs
+State the decision, evidence, changes, validation results, and unresolved risks. Do not claim completion without evidence.
+## Validation
+Record baseline, focused measurement, regression check, and remaining bottleneck.
+## Stop Conditions
+Stop and ask for clarification when a required contract, security decision, production-data policy, or destructive action is ambiguous. Do not expand scope merely because a related pattern exists.
+## Safety Boundaries
+Do not add memoization, dynamic import, CDN/edge infrastructure, or cache layers without measured evidence.

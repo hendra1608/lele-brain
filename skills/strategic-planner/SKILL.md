@@ -1,36 +1,26 @@
 ---
-name: Strategic Feature Planner
-description: High-level architectural analysis and implementation strategy for complex features.
+name: lele-strategic-planner
+description: Use for multi-layer features, architectural changes, cross-repository work, or decisions with meaningful compatibility or rollout risk.
 ---
-
-# Strategic Feature Planner Skill
-
-This skill is invoked when Bos gives a complex feature request that spans multiple layers (DB, BE, FE) or requires significant design decisions.
-
-## Phase 1: Impact Analysis (English Reasoning)
-Before proposing any code, analyze the following:
-1.  **Multi-Repo Synchronization**: Identify if changes are needed in the Backend (e.g., Prisma models, Controllers) to support Frontend feature requests.
-2.  **Data Layer Impact**: Does this require migrations?
-3.  **API Surface**: What new endpoints or changes to `UniversalUseCase` are needed?
-4.  **UI/UX Mapping**: How does this fit into the permission structure?
-5.  **Security/Roles**: Which `ModuleEnum` and `roleAPI` entries need updating?
-
-## Phase 2: Design Patterns
-- **Atomic Components**: Favor `_components` subfolders for feature-specific logic.
-- **Data Adapters**: Always use adapters to transform raw API responses into clean UI-compatible objects.
-    - Avoid direct usage of `any` from API responses.
-    - Define interfaces in `_types/index.ts`.
-- **Visual Polish**: 
-    - Use AntD `App` context for notifications.
-    - Implement Skeleton loading states for data-heavy sections.
-    - Use Framer Motion for cross-page transitions.
-
-## Phase 3: The "Surgical" Implementation Strategy
-- Implement dependencies first (DB schema → BE Controller → FE Types → FE Components → FE Page).
-- Verify build status at each atomic step.
-- Update `task.md` concurrently.
-
-## Execution Rules
-- **Language**: Core logic and reasoning should be documented in English for maximum precision.
-- **Validation**: Never mark a task as done without verifying the build and lint status.
-- **Reporting**: Report progress to Bos using Indonesian (Professional & Relaxed).
+# Strategic Feature Planner
+## Trigger
+The task spans multiple boundaries or needs a decision-complete implementation plan.
+## Scope
+Architecture and delivery planning, independent of framework, UI library, state library, or use-case naming convention.
+## Required Context
+Read applicable AGENTS.md, project wiki, repository conventions, and only the source files needed to establish current behavior.
+## Inputs
+The user goal, affected repositories/modules, constraints, and available validation commands.
+## Workflow
+1. Discover repository instructions, current architecture, contracts, data implications, authorization, and rollout constraints.
+2. Define goal, acceptance criteria, public interfaces, affected layers, compatibility strategy, and verification.
+3. Select child skills from the registry only for distinct risks.
+4. Prefer incremental seams and backward-compatible delivery over broad rewrites.
+## Outputs
+State the decision, evidence, changes, validation results, and unresolved risks. Do not claim completion without evidence.
+## Validation
+Ensure the plan names evidence, tests, failure modes, and rollback/containment where relevant.
+## Stop Conditions
+Stop and ask for clarification when a required contract, security decision, production-data policy, or destructive action is ambiguous. Do not expand scope merely because a related pattern exists.
+## Safety Boundaries
+Do not require a particular UI library, animation library, use-case abstraction, role configuration, task file, or manual type pattern unless the repository already requires it.

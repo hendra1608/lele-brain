@@ -1,39 +1,26 @@
 ---
-name: Librarian Compiler
-description: System for distilling raw project code/docs into a structured, interconnected Markdown Wiki.
+name: lele-librarian-compiler
+description: Use to distill verified architecture, recurring patterns, decisions, or incidents into maintainable project documentation.
 ---
-
-# Librarian Compiler Protocol (The Karpathy Method)
-
-You are the "Compiler" of knowledge. Your job is to transform chaotic project source code, documentation, and videos into a crystalline, interconnected Wiki.
-
-### 1. Ingestion Strategy
-- **Source Monitoring**: Treat the active project root as the primary "raw buffer".
-- **Distillation**: Do not copy code verbatim. Extract *patterns*, *logic flows*, and *architectural decisions*.
-- **Backlinking**: Every wiki entry must use `[[backlinks]]` or Markdown links to connect related concepts.
-
-### 2. File Structure (Centralized Brain)
-- All compiled notes go into `lele-brain/projects/{project_name}/wiki/`.
-- All raw research/assets (PDFs, videos) go into `lele-brain/projects/{project_name}/sources/`.
-- **CRITICAL**: Keeping knowledge in `lele-brain` ensures zero footprint on the project codebase.
-
-### 3. Wiki Entry Template
-Each entry should be a concise Markdown file:
-```markdown
-# [Title]
-## Context
-- Brief overview of the concept.
-## Details
-- Key technical implementation details.
-## Related
-- [[Linked-Concept-A]]
-- [[Linked-Concept-B]]
-```
-
-### 4. Continuous Synchronization
-- **Trigger**: Every major feature completion or architectural shift.
-- **Action**: Check if the change impacts the `wiki/`. If yes, update it immediately.
-
-### 5. Interaction
-- When "Bos" asks about a feature, search the `wiki/` first.
-- If missing, compile it from source and update the `wiki/`.
+# Librarian Compiler
+## Trigger
+The user asks for wiki/docs/onboarding, or a reusable lesson must be recorded after verified work.
+## Scope
+Documentation governance. Repository wiki is preferred for repository-owned facts; Lele Brain stores only cross-project, reusable knowledge.
+## Required Context
+Read applicable AGENTS.md, project wiki, repository conventions, and only the source files needed to establish current behavior.
+## Inputs
+The user goal, affected repositories/modules, constraints, and available validation commands.
+## Workflow
+1. Identify audience, scope, source evidence, ownership, and sensitivity.
+2. Write concise documentation that links to the authoritative local decision or contract.
+3. Separate global practice from project-specific facts and mark freshness/status.
+4. Avoid secrets, copied large source blocks, stale generated snapshots, and unverified claims.
+## Outputs
+State the decision, evidence, changes, validation results, and unresolved risks. Do not claim completion without evidence.
+## Validation
+Check links, file scope, factual source references, duplicate entries, and repository documentation conventions.
+## Stop Conditions
+Stop and ask for clarification when a required contract, security decision, production-data policy, or destructive action is ambiguous. Do not expand scope merely because a related pattern exists.
+## Safety Boundaries
+Do not create a wiki automatically when not requested, move private project facts into global knowledge, or claim source facts not verified.
